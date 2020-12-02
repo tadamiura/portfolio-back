@@ -16,4 +16,17 @@ router.get('/', (req,res) => {
     })
 })
 
+// Get project by ID for project apge in front
+router.get('/:id', (req, res) => {
+    const idProject = req.params.id
+    const sql = 'SELECT * FROM project WHERE id = ?'
+    connection.query(sql, [idProject], (err, result) => {
+      if (err) {
+        res.status(500).send('Erreur dans la récupération du projet')
+      } else {
+        res.status(200).send(result[0])
+      }
+    })
+  })
+
 module.exports = router;
