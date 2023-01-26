@@ -18,6 +18,8 @@ app.use('/api/about-me', routes.AboutMe)
 app.use('/api/projects', routes.Project)
 app.use('/api/stacks', routes.Stacks)
 app.use('/api/tools', routes.Tools)
+app.use('/api/experiences', routes.Experiences)
+app.use('/api/certifications', routes.Certifications)
 
 app.listen(port, (err) => {
     if (err) {
